@@ -34,4 +34,6 @@ protected:
 	void MoveForward(float InputValue);
 	void MoveRight(float InputValue);
 
+	void Turn(float InputValue);
+	void LookUp(float InputValue);
 };
