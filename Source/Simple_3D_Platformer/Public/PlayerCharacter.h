@@ -4,16 +4,19 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "InteractInterface.h"
 #include "PlayerCharacter.generated.h"
 
 UCLASS()
-class SIMPLE_3D_PLATFORMER_API APlayerCharacter : public ACharacter
+class SIMPLE_3D_PLATFORMER_API APlayerCharacter : public ACharacter, public IInteractInterface
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
 	APlayerCharacter();
+
+	
 
 protected:
 	// Called when the game starts or when spawned
@@ -36,4 +39,11 @@ protected:
 
 	void Turn(float InputValue);
 	void LookUp(float InputValue);
+
+	virtual void AddScore_Implementation(float AddScore) override;
+
+public:
+
+	UPROPERTY(EditDefaultsOnly)
+		float Score = 0.0f;
 };

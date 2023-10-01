@@ -10,6 +10,8 @@
 
 #include "NiagaraFunctionLibrary.h"
 
+
+
 // Sets default values
 ACoinActor::ACoinActor()
 {
@@ -54,6 +56,8 @@ void ACoinActor::OnBeginOverlapComponentEvent(
 		UNiagaraFunctionLibrary::SpawnSystemAtLocation(
 			this, OnPickupEffect, OtherActor->GetActorLocation() + Offset);
 	}
+
+	IInteractInterface::Execute_AddScore(OtherActor, AddScore);
 
 	Destroy();
 }

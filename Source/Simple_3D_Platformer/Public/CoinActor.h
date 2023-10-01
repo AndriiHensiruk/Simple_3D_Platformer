@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "InteractInterface.h"
 #include "CoinActor.generated.h"
 
 class UStaticMeshComponent;
@@ -14,7 +15,7 @@ class USoundBase;
 class USoundBase;
 
 UCLASS()
-class SIMPLE_3D_PLATFORMER_API ACoinActor : public AActor
+class SIMPLE_3D_PLATFORMER_API ACoinActor : public AActor, public IInteractInterface
 {
 	GENERATED_BODY()
 	
@@ -45,9 +46,13 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Coin")
 		TObjectPtr<USoundBase> PickSound;
 
-	UPROPERTY(EditDefaultsOnly, Category = "Coin Pickup Tutorial")
+	UPROPERTY(EditDefaultsOnly, Category = "Coin")
 		float VolumeMultiplier{ 0.5 };
 
-	UPROPERTY(EditDefaultsOnly, Category = "Coin Pickup Tutorial")
+	UPROPERTY(EditDefaultsOnly, Category = "Coin")
 		float PickEffectSpawnOffset{ 90 };
+
+	UPROPERTY(EditDefaultsOnly, Category = "Coin")
+		float AddScore{ 5 };
+
 };

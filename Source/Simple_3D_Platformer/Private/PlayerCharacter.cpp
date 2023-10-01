@@ -84,3 +84,9 @@ void APlayerCharacter::LookUp(float InputValue)
 	AddControllerPitchInput(InputValue * 45.0f * GetWorld()->GetDeltaSeconds());
 }
 
+void APlayerCharacter::AddScore_Implementation(float AddScore)
+{
+	Score = Score + AddScore;
+	UE_LOG(LogTemp, Warning, TEXT("Some warning message"), Score);
+}
+
