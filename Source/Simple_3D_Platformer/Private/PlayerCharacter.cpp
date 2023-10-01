@@ -26,7 +26,8 @@ void APlayerCharacter::BeginPlay()
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	GEngine->AddOnScreenDebugMessage(-1, 0.f, FColor::Yellow, FString::Printf(TEXT("Score: %i"), Score), true);
+	
 }
 
 // Called to bind functionality to input
@@ -87,6 +88,6 @@ void APlayerCharacter::LookUp(float InputValue)
 void APlayerCharacter::AddScore_Implementation(float AddScore)
 {
 	Score = Score + AddScore;
-	UE_LOG(LogTemp, Warning, TEXT("Some warning message"), Score);
+	UE_LOG(LogTemp, Warning, TEXT("Some warning %i Score"), Score);
 }
 

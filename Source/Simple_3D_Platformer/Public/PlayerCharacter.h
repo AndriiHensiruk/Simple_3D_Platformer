@@ -42,8 +42,6 @@ protected:
 
 	virtual void AddScore_Implementation(float AddScore) override;
 
-public:
-
 	UPROPERTY(EditDefaultsOnly)
-		float Score = 0.0f;
+		int32 Score = 0;
 };

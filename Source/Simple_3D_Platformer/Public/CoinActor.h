@@ -52,7 +52,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Coin")
 		float PickEffectSpawnOffset{ 90 };
 
+public:
+
 	UPROPERTY(EditDefaultsOnly, Category = "Coin")
-		float AddScore{ 5 };
+		int32 AddScore{ 5 };
 
 };
